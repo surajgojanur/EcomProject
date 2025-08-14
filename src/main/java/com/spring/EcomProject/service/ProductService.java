@@ -9,10 +9,15 @@ import java.util.List;
 @Service
 public class ProductService {
 
+    public Product getProductBIyd;
     @Autowired
     private ProductRepo repo;
 
     public List<Product> getAllProducts() {
         return repo.findAll();
+    }
+
+    public Product getProductBIyd(int prodId) {
+        return repo.findById(prodId).orElse(new Product());
     }
 }
