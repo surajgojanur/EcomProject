@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import jakarta.persistence.Lob;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -32,4 +32,18 @@ public class Product {
     private Date releaseDate;
     private boolean available;
     private int quantity;
+
+    private String imageName;
+    private String imageType;
+    @Lob
+    private byte[] imageDate;
+
+    public void setImageName(String originalFilename) {
+    }
+
+    public void setImageType(String contentType) {
+    }
+
+    public void setImageDate(byte[] bytes) {
+    }
 }
