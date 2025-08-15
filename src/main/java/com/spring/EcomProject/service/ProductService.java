@@ -3,6 +3,7 @@ import com.spring.EcomProject.model.Product;
 import com.spring.EcomProject.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -19,5 +20,9 @@ public class ProductService {
 
     public Product getProductBIyd(int prodId) {
         return repo.findById(prodId).orElse(new Product());
+    }
+
+    public Product addProduct(Product prod, MultipartFile imageFile) {
+        return repo.save(prod);
     }
 }
